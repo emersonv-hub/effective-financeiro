@@ -181,6 +181,27 @@ export type Database = {
         }
         Relationships: []
       }
+      module_permissions: {
+        Row: {
+          id: string
+          module: string
+          role: string
+          allowed: boolean
+        }
+        Insert: {
+          id?: string
+          module: string
+          role: string
+          allowed: boolean
+        }
+        Update: {
+          id?: string
+          module?: string
+          role?: string
+          allowed?: boolean
+        }
+        Relationships: []
+      }
       legal_documents: {
         Row: {
           active: boolean
