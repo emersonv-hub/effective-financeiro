@@ -181,6 +181,96 @@ export type Database = {
         }
         Relationships: []
       }
+      muscle_evaluations: {
+        Row: {
+          id: string
+          patient_id: string
+          fisio_id: string
+          evaluation_date: string
+          muscle_name: string
+          side: string | null
+          unit: string
+          measure_1: number | null
+          measure_2: number | null
+          measure_3: number | null
+          average: number | null
+          notes: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          patient_id: string
+          fisio_id: string
+          evaluation_date?: string
+          muscle_name: string
+          side?: string | null
+          unit?: string
+          measure_1?: number | null
+          measure_2?: number | null
+          measure_3?: number | null
+          average?: number | null
+          notes?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          patient_id?: string
+          fisio_id?: string
+          evaluation_date?: string
+          muscle_name?: string
+          side?: string | null
+          unit?: string
+          measure_1?: number | null
+          measure_2?: number | null
+          measure_3?: number | null
+          average?: number | null
+          notes?: string | null
+          created_at?: string
+        }
+        Relationships: []
+      }
+      daily_reports: {
+        Row: {
+          id: string
+          report_date: string
+          patient_id: string
+          fisio_id: string | null
+          appointment_id: string | null
+          evolution: string | null
+          procedures: string[] | null
+          duration_minutes: number | null
+          status: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          report_date: string
+          patient_id: string
+          fisio_id?: string | null
+          appointment_id?: string | null
+          evolution?: string | null
+          procedures?: string[] | null
+          duration_minutes?: number | null
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          report_date?: string
+          patient_id?: string
+          fisio_id?: string | null
+          appointment_id?: string | null
+          evolution?: string | null
+          procedures?: string[] | null
+          duration_minutes?: number | null
+          status?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       module_permissions: {
         Row: {
           id: string
