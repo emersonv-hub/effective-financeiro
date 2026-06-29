@@ -13,6 +13,8 @@ export function useAuth() {
         setUser({ id: session.user.id, email: session.user.email! });
         loadProfile(session.user.id).finally(() => { setLoading(false); loadPerms(); });
       } else {
+        setUser(null);
+        setProfile(null);
         setLoading(false);
       }
     });
