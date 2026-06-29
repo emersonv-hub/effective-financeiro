@@ -1,17 +1,20 @@
 import { createClient } from '@supabase/supabase-js';
-import { SUPABASE_PROJECT_URL, SUPABASE_PROJECT_KEY } from '@/integrations/supabase/client';
 
-// Exported constants are safe against minification in production builds
+// Hardcoded fallbacks garantem funcionamento mesmo quando Lovable
+// sobrescreve integrations/supabase/client.ts com sua versao propria
+const supabaseUrl =
+  (import.meta.env.VITE_SUPABASE_URL as string | undefined) ||
+  (import.meta.env.VITE_SUPABASE_PUBLISHABLE_URL as string | undefined) ||
+  'https://ferlzxkdmbxfisdcwcrl.supabase.co';
+
+const supabaseKey =
+  (import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined) ||
+  (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string | undefined) ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlcmx6eGtkbWJ4ZmlzZGN3Y3JsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyMDg3MTAsImV4cCI6MjA5Njc4NDcxMH0.Wr6Gt6Uc4owdFH5EzUmgvdypWWfjaC6oB7SpFMhcuy4';
+
 export const supabaseMisconfigured =
-  !SUPABASE_PROJECT_URL ||
-  SUPABASE_PROJECT_URL.includes('placeholder') ||
-  !SUPABASE_PROJECT_KEY ||
-  SUPABASE_PROJECT_KEY.includes('placeholder');
+  !supabaseUrl || supabaseUrl.includes('placeholder');
 
-// Untyped client used by app business logic — avoids strict DB type conflicts
-// Uses same URL/key as the typed client, so sessions are shared via localStorage
-export const supabase = createClient(
-  SUPABASE_PROJECT_URL || 'https://placeholder.supabase.co',
-  SUPABASE_PROJECT_KEY || 'placeholder',
-  { auth: { persistSession: true, autoRefreshToken: true } },
-);
+export const supabase = createClient(supabaseUrl, supabaseKey, {
+  auth: { persistSession: true, autoRefreshToken: true },
+});
