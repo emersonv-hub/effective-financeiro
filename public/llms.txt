@@ -1,0 +1,9 @@
+# Effective Fisio
+
+> Sistema de gestão para clínicas de fisioterapia: agenda, prontuários, presença, contratos e financeiro.
+
+Effective Fisio é uma aplicação web privada usada por equipes de clínicas de fisioterapia. Todas as áreas operacionais exigem autenticação; apenas a tela de acesso é pública.
+
+## Pages
+
+- [Acesso](/login): Tela de login da plataforma.

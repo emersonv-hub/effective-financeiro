@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /agenda
+Disallow: /pacientes
+Disallow: /presenca
+Disallow: /financeiro
+Disallow: /relatorios
+Disallow: /contratos
+Disallow: /configuracoes
+
+Sitemap: https://kind-repo-garden.lovable.app/sitemap.xml
