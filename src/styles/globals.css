@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 20% 15%;
+    --primary: 224 95% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 15% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 50%;
+    --accent: 210 20% 92%;
+    --accent-foreground: 222 20% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 224 95% 56%;
+    --radius: 0.5rem;
+    --sidebar-background: 222 22% 13%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 224 95% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 22% 20%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 222 22% 20%;
+    --sidebar-ring: 224 95% 65%;
+  }
+
+  .dark {
+    --background: 222 22% 10%;
+    --foreground: 210 20% 95%;
+    --card: 222 22% 13%;
+    --card-foreground: 210 20% 95%;
+    --popover: 222 22% 13%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 224 95% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 15% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 222 22% 18%;
+    --muted-foreground: 215 15% 60%;
+    --accent: 222 22% 18%;
+    --accent-foreground: 210 20% 95%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 22% 20%;
+    --input: 222 22% 20%;
+    --ring: 224 95% 65%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+}
+
+/* FullCalendar custom styles */
+.fc { font-family: 'Inter', sans-serif; }
+.fc-toolbar-title { font-size: 1rem !important; font-weight: 600 !important; }
+.fc-button { border-radius: 0.375rem !important; font-size: 0.875rem !important; }
+.fc-button-primary {
+  background-color: #2250fc !important;
+  border-color: #2250fc !important;
+}
+.fc-button-primary:hover { background-color: #1a3fd4 !important; border-color: #1a3fd4 !important; }
+.fc-event { border-radius: 4px !important; font-size: 0.75rem !important; padding: 1px 4px !important; }
+.fc-daygrid-event { white-space: nowrap !important; overflow: hidden !important; }
+
+/* Money values */
+.font-money { font-family: 'JetBrains Mono', monospace; }
+
+/* Status badges */
+.badge-agendado { @apply bg-blue-100 text-blue-700 border-blue-200; }
+.badge-confirmado { @apply bg-cyan-100 text-cyan-700 border-cyan-200; }
+.badge-em_atendimento { @apply bg-yellow-100 text-yellow-700 border-yellow-200; }
+.badge-concluido { @apply bg-green-100 text-green-700 border-green-200; }
+.badge-faltou { @apply bg-red-100 text-red-700 border-red-200; }
+.badge-cancelado { @apply bg-gray-100 text-gray-600 border-gray-200; }
+.badge-pendente { @apply bg-yellow-100 text-yellow-700 border-yellow-200; }
+.badge-pago { @apply bg-green-100 text-green-700 border-green-200; }
+.badge-parcial { @apply bg-orange-100 text-orange-700 border-orange-200; }
