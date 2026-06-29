@@ -48,6 +48,6 @@ export const useAuthStore = create<AuthState>()(
 
       isAdmin: () => get().profile?.role === 'admin',
     }),
-    { name: 'auth-store', partialize: (s) => ({ user: s.user, profile: s.profile }) }
+    { name: 'auth-store', partialize: (s) => ({ user: s.user }) }
   )
 );
