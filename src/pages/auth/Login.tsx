@@ -37,19 +37,19 @@ export default function Login() {
   return (
     <div className="min-h-screen flex">
       {/* Left panel — branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-[#1a1f2e] flex-col items-center justify-center p-12 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
+      <div className="hidden lg:flex lg:w-1/2 bg-white flex-col items-center justify-center p-12 relative overflow-hidden border-r border-gray-100">
+        <div className="absolute inset-0 opacity-[0.03]">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="absolute rounded-full border border-white"
+            <div key={i} className="absolute rounded-full border border-gray-400"
               style={{ width: 200 + i * 120, height: 200 + i * 120, top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }} />
           ))}
         </div>
         <div className="relative text-center">
           <div className="flex justify-center mb-3">
-            <Logo size="xl" theme="dark" />
+            <Logo size="xl" theme="light" />
           </div>
           <p className="text-[#728a9f] tracking-[0.25em] uppercase text-xs font-semibold mb-8">FisioManager</p>
-          <p className="text-[#9aa5be] text-sm max-w-xs leading-relaxed">
+          <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
             Sistema completo de gestão para clínicas de fisioterapia. Agenda, pacientes, presença e financeiro em um só lugar.
           </p>
         </div>
